@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Ticket</title>
+</head>
+<body>
+    <article style="border-style: dotted; text-align: left;" class="ticket">
+        <header class="ticket__wrapper">
+          <div class="ticket__header">
+            <p id="text">
+                <p>NO. 456789</p>
+               
+          <style>
+              article{
+                  padding-left: 40px;
+                  width:250px;
+              }
+              @media print {
+                  .noprint{
+                  visibility: hidden;
+              }
+            }
+          </style>
+          </div>
+        </header>
+        <div class="ticket__divider">
+          <div class="ticket__notch"></div>
+          <div class="ticket__notch ticket__notch--right"></div>
+        </div>
+        <div class="ticket__body">
+          <section class="ticket__section">
+           
+            <script>
+                let a=localStorage.getItem("selectedSeats");
+                var old= JSON.parse(localStorage.getItem('selectedSeats'));
+                
+                var i;
+                var l=old.length;
+
+                 var ticketprice =localStorage.getItem("priceofticket");
+                 document.write(" <h3>Your Tickets</h3>"+" 🎟"+l);
+     
+      document.write( "<h3>Raj Mandir Cinema</h3>")
+      document.write( "<p>Balcony RS.120 Each</p>")
+      var x= old.toString();
+      document.write( "<p>Block 406   Row Q   Seats no. </p>"+x)
+      document.write( "<p>Your total seats are</p>"+l+"\n")
+      document.write( " for a price of RS"+"\n"+l*ticketprice)
+
+        </script>
+
+          </section>
+          <section class="ticket__section">
+            <h3>Date</h3>
+            <p>28-12-2020</p>
+            <p>Raj Mandir Cinema,Jaipur</p>
+          </section>
+          <section class="ticket__section">
+            <h3>Payment Method</h3>
+            <p>Mastercard **** 8765</p>
+          </section>
+        </div>
+        <footer class="ticket__footer">
+          <span>Total Paid</span>
+          <script>
+              document.write(l*ticketprice)
+          </script>
+        </footer>
+    </article>
+      <input type="button" value="save as PDf" onclick="window.print()"/>
+</body>
+</html>
